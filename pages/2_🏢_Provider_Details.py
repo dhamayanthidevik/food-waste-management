@@ -3,14 +3,11 @@ import pandas as pd
 import pyodbc
 
 
-conn = pyodbc.connect(
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=INBOOK_X1_SLIM\SQLEXPRESS;"
-    "DATABASE=FoodWasteDB;"
-    "Trusted_Connection=yes;"
-)
-food_df = pd.read_sql("SELECT * FROM clean_Food_Listings", conn)
-provider_df = pd.read_sql("SELECT * FROM Clean_Providers", conn)
+data=load_data()
+
+food_df = data["food_df"]
+
+provider_df = data["provider_df"]
 
 promerged_df = food_df.merge(provider_df, on='Provider_ID')
 
