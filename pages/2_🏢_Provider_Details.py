@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import pyodbc
+from database import load_data
 
 
 data=load_data()
