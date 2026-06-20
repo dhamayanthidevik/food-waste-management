@@ -1,18 +1,10 @@
-# import pyodbc
+
 import pandas as pd
 import streamlit as st
-# def get_connection():
-#     return pyodbc.connect(
-#             "DRIVER={ODBC Driver 17 for SQL Server};"
-#             "SERVER=INBOOK_X1_SLIM\\SQLEXPRESS;"
-#             "DATABASE=FoodWasteDB;"
-#             "Trusted_Connection=yes;"
-#         )
     
 @st.cache_data
 def load_data():
-    # conn = get_connection()
-    # cursor=conn.cursor()
+    
     food_df = pd.read_csv("Food_listing_clean.csv")
 
     provider_df = pd.read_csv("clean_Providers.csv")
@@ -33,7 +25,7 @@ def load_data():
                clamerged_df,
                on ='Receiver_ID'
     )
-    # conn.close()
+    
    
     return {
         "food_df": food_df,
