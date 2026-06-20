@@ -1,17 +1,14 @@
 import streamlit as st
 import pandas as pd
-import pyodbc
+from database import load_data
 
+data=load_data()
 
-conn = pyodbc.connect(
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=INBOOK_X1_SLIM\SQLEXPRESS;"
-    "DATABASE=FoodWasteDB;"
-    "Trusted_Connection=yes;"
-)
-food_df = pd.read_sql("SELECT * FROM clean_Food_Listings", conn)
-reciever_df=pd.read_sql("select * from clean_Receivers",conn)
-claim_df = pd.read_sql("SELECT * FROM clean_Claims", conn)
+food_df = data["food_df"]
+
+reciever_df=data["receiver_df"]
+
+claim_df = data["claim_df"]
 
 clamerged_df = food_df.merge(claim_df, on='Food_ID')
 recmerge_df=reciever_df.merge(clamerged_df,on ='Receiver_ID')
