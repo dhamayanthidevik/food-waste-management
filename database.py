@@ -7,11 +7,11 @@ def load_data():
     
     food_df = pd.read_csv("Food_listing_clean.csv")
 
-    provider_df = pd.read_csv("clean_Providers.csv")
+    provider_df = pd.read_csv("providers_clean.csv")
 
-    receiver_df = pd.read_csv("clean_Receivers.csv")
+    receiver_df = pd.read_csv("reciever_clean.csv")
 
-    claim_df = pd.read_csv("clean_Claims.csv")
+    claim_df = pd.read_csv("claim_clean.csv")
         
     promerged_df = food_df.merge(
         provider_df, 
