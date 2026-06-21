@@ -12,7 +12,7 @@ clamerged_df=data["clamerged_df"]
 
 claim_df=data["claim_df"]
 
-
+st.title("📋 Query Insight")
 query_option = st.selectbox(
      "Select a Query",
     [
