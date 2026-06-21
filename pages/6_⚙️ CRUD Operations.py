@@ -32,7 +32,7 @@ receiver_df = get_receivers()
 #     get_food_listings
 # )
 
-st.title("CRUD Operations")
+st.title(" ⚙️ CRUD Operations")
 
 table = st.selectbox(
     "Select Table",
