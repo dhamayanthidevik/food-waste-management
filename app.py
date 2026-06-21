@@ -7,5 +7,5 @@ Welcome to the Local Food Wastage Management System Dashboard.
 
 """)
 
-st.image("images/home_img.webp", use_container_width=True)
+st.image("images/home_img.png", use_container_width=True)
 
