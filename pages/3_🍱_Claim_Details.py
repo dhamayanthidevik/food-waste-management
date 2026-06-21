@@ -13,6 +13,8 @@ claim_df = data["claim_df"]
 clamerged_df = food_df.merge(claim_df, on='Food_ID')
 recmerge_df=reciever_df.merge(clamerged_df,on ='Receiver_ID')
 
+st.title("🍱 Claim Analysis")
+
 Status =  ["All"] +sorted(recmerge_df['Status'].dropna().unique().tolist())
 City =  ["All"] + sorted(recmerge_df['City'].dropna().unique().tolist())
 col1,col2= st.columns(2)
